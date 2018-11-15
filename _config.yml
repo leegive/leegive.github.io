@@ -80,4 +80,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:leegive/leegive.github.io.git
-  branch: public
+  branch: master
