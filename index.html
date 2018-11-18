@@ -445,28 +445,16 @@
       
         
           
-            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>Ants - POJ No. 1852</p>
-<h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>$n$只蚂蚁以每秒1cm的速度在长为$Lcm$的竿子上爬行。当蚂蚁爬到竿子的端点时就会掉落。由于竿子太细，两只蚂蚁相遇时，它们不能交错通过，只能各自反向爬回去。对于每只蚂蚁，我们知道它距离竿子左端的距离$X_i$，但是不知道它当前的朝向。请计算所有蚂蚁落下竿子所需的最短时间和最长时间。</p>
-<h1 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h1><ul>
-<li>$ 1 \leq L \leq 10^6 $</li>
-<li>$ 1 \leq n \leq 10^6 $</li>
-<li>$ 0 \leq x_i \leq L $</li>
-</ul>
-<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><p>$ L = 10 $<br>$ n = 3 $<br>$ x = {2, 6, 7} $</p>
-<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>$ min = 4(左、右、右) $<br>$ max = 8(右、右、右) $</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>首先很容易想到一个穷竭搜索算法，即枚举所有蚂蚁的初始朝向的组合，这可以利用递归函数实现。</p>
-<p>每只蚂蚁的初始朝向都有2种可能，$n$只蚂蚁就是$2 \times 2 \times \cdots \times 2 = 2^n$种。如果$n$比较小，这个算法还是可行的，但指数函数随着$n$的增长会极烈增长。</p>
-<p>穷竭搜索的运行时间也随着剧烈增长。一般把指数阶的运行时间叫做指数时间。指数时间的算法无法处理稍大规模的输入。</p>
-<p>接下来，让我们来考虑比穷竭搜素更高效的算法。首先对于最短时间，看起来所有蚂蚁都朝向较近的端点走会比较好。事实上，这种情况下不会发生两只蚂蚁相遇的情况，而且也不可能在比此更短的时间内走到杆子的断点。</p>
-<p>接下来，为了思考最长时间的情况，让我们看看蚂蚁相遇时会发生什么。</p>
-<p>事实上，可以知道两只蚂蚁相遇后，当它们保持原样交错而过继续前进也不会有任何问题。这样看来，可以认为每只蚂蚁都是独立运动的，所有要求最长时间，只要求蚂蚁到杆子端点的最大距离就好了。</p>
-<p>这样，不论最长时间还是最短时间，都只要对每次蚂蚁检查一次就好了，这是$O(n)$时间的算法。对于限制条件$n \leq 10^6$，这个算法是够用的，于是问题得解。</p>
-<h1 id="答题"><a href="#答题" class="headerlink" title="答题"></a>答题</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> l, n;</span><br><span class="line"><span class="keyword">int</span>[] x;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 计算最短的时间</span></span><br><span class="line">    <span class="keyword">int</span> minTime = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        minTime = Math.max(minTime, Math.min(x[i], l - x[i]));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算最长的时间</span></span><br><span class="line">    <span class="keyword">int</span> maxTime = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        maxTime = Math.max(maxTime, Math.max(x[i], l - x[i]));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    System.out.print(<span class="string">"%d %d\n"</span>, minT, maxT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这个问题可以说是观察想象力类型问题的经典例子。有很多这样的问题，虽然开始不太明白，但相同后，最后的程序却是出乎意料地简单。</p>
-</blockquote>
-
-          
+          题目Ants - POJ No. 1852
+描述$n$只蚂蚁以每秒1cm的速度在长为$Lcm$的竿子上爬行。当蚂蚁爬到竿子的端点时就会掉落。由于竿子太细，两只蚂蚁相遇时，它们不能交错通过，只能各自反向爬回去。对于每只蚂蚁，我们知道它距离竿子左端的距离$X_i$，但是不知道它当前的朝向。请计算所有蚂蚁
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/18/程序设计竞赛-Ants/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -617,23 +605,22 @@
       
         
           
-            <h1 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h1><blockquote>
-<p>有n根棍子，棍子$i$长度为$a_i$。想要从中徐阿初3根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。</p>
-</blockquote>
-<h1 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h1><ul>
-<li>$ 3 \leq n \leq 100 $</li>
-<li>$ 1 \leq a_i \leq 10^6 $</li>
-</ul>
-<h1 id="样例1"><a href="#样例1" class="headerlink" title="样例1"></a>样例1</h1><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>$ n = 5 $<br>$ a = {2, 3, 4, 5, 10} $</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><h1 id="12-选择3、4、5时"><a href="#12-选择3、4、5时" class="headerlink" title="12(选择3、4、5时)"></a>12(选择3、4、5时)</h1><h1 id="样例2"><a href="#样例2" class="headerlink" title="样例2"></a>样例2</h1><h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><p>$ n = 4 $<br>$ a = {4, 5, 10, 20} $</p>
-<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><p>$ 0 (无论怎么选都无法组成三角形) $</p>
-<hr>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>选择3根棍子，它们能组成的充分条件为<br><strong>最长棍子的长度 &lt; 其余两根棍子的长度之和</strong></p>
-<p>于是我们可以试想这样一种算法：首先用三重循环枚举所有的棍子选择方案，再利用上式判断能否组成三角形。如果可以，那么该三角形的周长就是备选答案。</p>
-<p>这里用了三重循环，所有复杂度是$O(n^3)$。将$n=100$代入$n^3$得到$10^6$，可知这个复杂度是足够低的。</p>
-<h1 id="答题"><a href="#答题" class="headerlink" title="答题"></a>答题</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span>[] a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 备选答案</span></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 让 i &lt; j &lt; k, 这样棍子就不会被重复选中了</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = j + <span class="number">1</span>; k &lt; n; k++) &#123;</span><br><span class="line">                <span class="comment">// 三角形周长</span></span><br><span class="line">                <span class="keyword">int</span> len = a[i] + a[j] + a[k];</span><br><span class="line">                <span class="comment">// 最长的棍子</span></span><br><span class="line">                <span class="keyword">int</span> ma = max(a[i], max(a[j], a[k]));</span><br><span class="line">                <span class="comment">//其余两棍子长度之和</span></span><br><span class="line">                <span class="keyword">int</span> rest = len - ma;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//如果可以组成三角形，就更新备选答案</span></span><br><span class="line">                <span class="keyword">if</span>(ma &lt; rest) &#123;</span><br><span class="line">                    ans = max(ans, len);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    System.out.println(ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          三角形
+有n根棍子，棍子$i$长度为$a_i$。想要从中徐阿初3根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。
 
-          
+限制条件
+$ 3 \leq n \leq 100 $
+$ 1 \leq a_i \leq 10^6 $
+
+样例1输入$ n = 5 $$ a = {2, 3
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/18/程序设计竞赛-轻松热身/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -784,31 +771,18 @@
       
         
           
-            <h1 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h1><h2 id="构建消息消费端"><a href="#构建消息消费端" class="headerlink" title="构建消息消费端"></a>构建消息消费端</h2><ul>
-<li>创建绑定接口，绑定<code>example-topic</code>输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Input</span>(NAME)</span><br><span class="line">    <span class="function">SubscribableChannel <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>对上述输入通道创建监听与处理逻辑。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableBinding</span>(ExampleBinder.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(ExampleReceiver.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@StreamListener</span>(ExampleBinder.NAME)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receive</span><span class="params">(String payload)</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"Received: "</span> + payload);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>创建应用主类和配置文件</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ExampleApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=stream-consumer-group</span><br><span class="line">server.port=0</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里设置server.port=0，以方便在本地启动多实例来重现问题。</p>
-</blockquote>
-<h2 id="构建消息生产端"><a href="#构建消息生产端" class="headerlink" title="构建消息生产端"></a>构建消息生产端</h2><p>比较简单，需要注意的是，使用@Output创建一个同名的输出绑定，这样发出的消息才能被上述启动的实例接收到。具体实现如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@EnableBinding</span>(value = &#123;ExampleApplicationTests.ExampleBinder.class&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> ExampleBinder exampleBinder;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exampleBinderTester</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        exampleBinder.output().send(MessageBuilder.withPayload(<span class="string">"Produce a message from : http://blog.didispace.com"</span>).build());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Output</span>(NAME)</span><br><span class="line">		<span class="function">MessageChannel <span class="title">output</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>启动上述测试用例之后，可以发现之前启动的两个实例都收到的消息，并在日志中打印了：Received: Produce a message from : <a href="http://blog.didispace.com。消息重复消费的问题成功重现！" target="_blank" rel="noopener">http://blog.didispace.com。消息重复消费的问题成功重现！</a></p>
-<h1 id="使用消费组解决问题"><a href="#使用消费组解决问题" class="headerlink" title="使用消费组解决问题"></a>使用消费组解决问题</h1><p>如何解决上述消息重复消费的问题呢？我们只需要在配置文件中增加如下配置即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.cloud.stream.bindings.example-topic.group=aaa</span><br></pre></td></tr></table></figure>
-<p>当我们指定了某个绑定所指向的消费组之后，往当前主题发送的消息在每个订阅消费组中，只会有一个订阅者接收和消费，从而实现了对消息的负载均衡。只所以之前会出现重复消费的问题，是由于默认情况下，任何订阅都会产生一个匿名消费组，所以每个订阅实例都会有自己的消费组，从而当有消息发送的时候，就形成了广播的模式。</p>
-<p>另外，需要注意上述配置中<code>example-topic</code>是在代码中<code>@Output</code>和<code>@Input</code>中传入的名字。</p>
+          问题重现构建消息消费端
+创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。
 
-          
+12345678interface ExampleBinder &#123;    String NAME = "exampl
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1044,9 +1018,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -1083,16 +1054,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
