@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="题目Ants - POJ No. 1852 描述$n$只蚂蚁以每秒1cm的速度在长为$Lcm$的竿子上爬行。当蚂蚁爬到竿子的端点时就会掉落。由于竿子太细，两只蚂蚁相遇时，它们不能交错通过，只能各自反向爬回去。对于每只蚂蚁，我们知道它距离竿子左端的距离$X_i$，但是不知道它当前的朝向。请计算所有蚂蚁落下竿子所需的最短时间和最长时间。 限制条件 $ 1 \leq L \leq 10^6 $ $ 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-18T06:28:01.811Z">
+<meta property="og:updated_time" content="2018-11-18T06:33:35.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序设计竞赛-Ants">
 <meta name="twitter:description" content="题目Ants - POJ No. 1852 描述$n$只蚂蚁以每秒1cm的速度在长为$Lcm$的竿子上爬行。当蚂蚁爬到竿子的端点时就会掉落。由于竿子太细，两只蚂蚁相遇时，它们不能交错通过，只能各自反向爬回去。对于每只蚂蚁，我们知道它距离竿子左端的距离$X_i$，但是不知道它当前的朝向。请计算所有蚂蚁落下竿子所需的最短时间和最长时间。 限制条件 $ 1 \leq L \leq 10^6 $ $ 1">
@@ -307,6 +307,8 @@
 <li>$ 1 \leq n \leq 10^6 $</li>
 <li>$ 0 \leq x_i \leq L $</li>
 </ul>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><p>$ L = 10 $<br>$ n = 3 $<br>$ x = {2, 6, 7} $</p>
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>$ min = 4(左、右、右) $<br>$ max = 8(右、右、右) $</p>
 
       
     </div>
@@ -472,7 +474,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述"><span class="nav-number">2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#限制条件"><span class="nav-number">3.</span> <span class="nav-text">限制条件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述"><span class="nav-number">2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#限制条件"><span class="nav-number">3.</span> <span class="nav-text">限制条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入"><span class="nav-number">4.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出"><span class="nav-number">5.</span> <span class="nav-text">输出</span></a></li></ol></div>
             
 
           </div>
@@ -672,6 +674,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
