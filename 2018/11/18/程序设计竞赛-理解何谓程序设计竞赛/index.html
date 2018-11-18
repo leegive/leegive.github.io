@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Spring Cloud Stream,">
+  <meta name="keywords" content="算法,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。">
-<meta name="keywords" content="Spring Cloud Stream">
+<meta name="description" content="顾名思义，程序设计竞赛就是以程序为主题举办的竞赛。世界上有解题竞赛、性能竞赛、创意竞赛等各种各样的程序设计竞赛。下面用题目来描述：">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring Cloud Stream 如何处理消息重复消费">
-<meta property="og:url" content="https://leegive.github.io/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/index.html">
+<meta property="og:title" content="程序设计竞赛-理解何谓程序设计竞赛">
+<meta property="og:url" content="https://leegive.github.io/2018/11/18/程序设计竞赛-理解何谓程序设计竞赛/index.html">
 <meta property="og:site_name" content="Li.shangjin blog">
-<meta property="og:description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。">
+<meta property="og:description" content="顾名思义，程序设计竞赛就是以程序为主题举办的竞赛。世界上有解题竞赛、性能竞赛、创意竞赛等各种各样的程序设计竞赛。下面用题目来描述：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-18T13:49:50.269Z">
+<meta property="og:updated_time" content="2018-11-18T14:14:31.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring Cloud Stream 如何处理消息重复消费">
-<meta name="twitter:description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。">
+<meta name="twitter:title" content="程序设计竞赛-理解何谓程序设计竞赛">
+<meta name="twitter:description" content="顾名思义，程序设计竞赛就是以程序为主题举办的竞赛。世界上有解题竞赛、性能竞赛、创意竞赛等各种各样的程序设计竞赛。下面用题目来描述：">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://leegive.github.io/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/">
+  <link rel="canonical" href="https://leegive.github.io/2018/11/18/程序设计竞赛-理解何谓程序设计竞赛/">
 
 
 
 
 
-  <title>Spring Cloud Stream 如何处理消息重复消费 | Li.shangjin blog</title>
+  <title>程序设计竞赛-理解何谓程序设计竞赛 | Li.shangjin blog</title>
   
 
 
@@ -341,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://leegive.github.io/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/">
+    <link itemprop="mainEntityOfPage" href="https://leegive.github.io/2018/11/18/程序设计竞赛-理解何谓程序设计竞赛/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Li.shangjin">
@@ -358,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring Cloud Stream 如何处理消息重复消费</h1>
+          <h1 class="post-title" itemprop="name headline">程序设计竞赛-理解何谓程序设计竞赛</h1>
         
 
         <div class="post-meta">
@@ -370,8 +370,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T13:23:26+08:00">
-                2018-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-18T22:03:02+08:00">
+                2018-11-18
               </time>
             
 
@@ -393,8 +393,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -410,7 +410,7 @@
 
           
           
-             <span id="/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/" class="leancloud_visitors" data-flag-title="Spring Cloud Stream 如何处理消息重复消费">
+             <span id="/2018/11/18/程序设计竞赛-理解何谓程序设计竞赛/" class="leancloud_visitors" data-flag-title="程序设计竞赛-理解何谓程序设计竞赛">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -441,30 +441,10 @@
       
 
       
-        <h1 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h1><h2 id="构建消息消费端"><a href="#构建消息消费端" class="headerlink" title="构建消息消费端"></a>构建消息消费端</h2><ul>
-<li>创建绑定接口，绑定<code>example-topic</code>输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。</li>
-</ul>
+        <p>顾名思义，程序设计竞赛就是以程序为主题举办的竞赛。世界上有解题竞赛、性能竞赛、创意竞赛等各种各样的程序设计竞赛。下面用题目来描述：</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Input</span>(NAME)</span><br><span class="line">    <span class="function">SubscribableChannel <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>对上述输入通道创建监听与处理逻辑。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableBinding</span>(ExampleBinder.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(ExampleReceiver.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@StreamListener</span>(ExampleBinder.NAME)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receive</span><span class="params">(String payload)</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"Received: "</span> + payload);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>创建应用主类和配置文件</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ExampleApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=stream-consumer-group</span><br><span class="line">server.port=0</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里设置server.port=0，以方便在本地启动多实例来重现问题。</p>
-</blockquote>
-<h2 id="构建消息生产端"><a href="#构建消息生产端" class="headerlink" title="构建消息生产端"></a>构建消息生产端</h2><p>比较简单，需要注意的是，使用@Output创建一个同名的输出绑定，这样发出的消息才能被上述启动的实例接收到。具体实现如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@EnableBinding</span>(value = &#123;ExampleApplicationTests.ExampleBinder.class&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> ExampleBinder exampleBinder;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exampleBinderTester</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        exampleBinder.output().send(MessageBuilder.withPayload(<span class="string">"Produce a message from : http://blog.didispace.com"</span>).build());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Output</span>(NAME)</span><br><span class="line">		<span class="function">MessageChannel <span class="title">output</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>启动上述测试用例之后，可以发现之前启动的两个实例都收到的消息，并在日志中打印了：Received: Produce a message from : <a href="http://blog.didispace.com。消息重复消费的问题成功重现！" target="_blank" rel="noopener">http://blog.didispace.com。消息重复消费的问题成功重现！</a></p>
-<h1 id="使用消费组解决问题"><a href="#使用消费组解决问题" class="headerlink" title="使用消费组解决问题"></a>使用消费组解决问题</h1><p>如何解决上述消息重复消费的问题呢？我们只需要在配置文件中增加如下配置即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.cloud.stream.bindings.example-topic.group=aaa</span><br></pre></td></tr></table></figure>
-<p>当我们指定了某个绑定所指向的消费组之后，往当前主题发送的消息在每个订阅消费组中，只会有一个订阅者接收和消费，从而实现了对消息的负载均衡。只所以之前会出现重复消费的问题，是由于默认情况下，任何订阅都会产生一个匿名消费组，所以每个订阅实例都会有自己的消费组，从而当有消息发送的时候，就形成了广播的模式。</p>
-<p>另外，需要注意上述配置中<code>example-topic</code>是在代码中<code>@Output</code>和<code>@Input</code>中传入的名字。</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><strong>抽签</strong></p>
+<p>你的朋友建议玩一个游戏：将写有数字的$n$个纸片放入口袋中，你可以从口袋中抽取4次纸片，每次记下纸片上的数字后将其放回口袋中。如果4个数字的和是$m$，就是你赢，否则就是你的朋友赢。你挑战了好几回，结果一次也没有赢过，于是撕破口袋，取出所有纸片，检查自己是否真的有赢的可能性。请你编写一个程序，判断当纸片上所写的数字是$k_1, k_2, \cdots, k_n$时，是否存在抽取4次和为$m$的方案。如果存在，输出Yes； 否则，输出No。</p>
 
       
     </div>
@@ -511,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spring-Cloud-Stream/" rel="tag"># Spring Cloud Stream</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -524,15 +504,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/18/程序设计竞赛-Ants/" rel="next" title="程序设计竞赛-Ants">
+                <i class="fa fa-chevron-left"></i> 程序设计竞赛-Ants
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/18/程序设计竞赛-轻松热身/" rel="prev" title="程序设计竞赛-轻松热身">
-                程序设计竞赛-轻松热身 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -694,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题重现"><span class="nav-number">1.</span> <span class="nav-text">问题重现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建消息消费端"><span class="nav-number">1.1.</span> <span class="nav-text">构建消息消费端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建消息生产端"><span class="nav-number">1.2.</span> <span class="nav-text">构建消息生产端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用消费组解决问题"><span class="nav-number">2.</span> <span class="nav-text">使用消费组解决问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li></ol></div>
             
 
           </div>
@@ -1014,6 +994,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
