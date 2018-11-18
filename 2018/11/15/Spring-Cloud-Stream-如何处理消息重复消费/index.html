@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。  12345678interface ExampleBinder &amp;#123;    String NAME = &quot;example-topic&quot;;    @Input(NAME)    SubscribableChannel i">
+<meta name="description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。">
 <meta name="keywords" content="Spring,Spring Boot,Spring Cloud,RabbitMQ,Kafka">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud Stream 如何处理消息重复消费">
 <meta property="og:url" content="https://leegive.github.io/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/index.html">
 <meta property="og:site_name" content="Li.shangjin blog">
-<meta property="og:description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。  12345678interface ExampleBinder &amp;#123;    String NAME = &quot;example-topic&quot;;    @Input(NAME)    SubscribableChannel i">
+<meta property="og:description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-18T12:27:08.208Z">
+<meta property="og:updated_time" content="2018-11-18T13:14:34.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud Stream 如何处理消息重复消费">
-<meta name="twitter:description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。  12345678interface ExampleBinder &amp;#123;    String NAME = &quot;example-topic&quot;;    @Input(NAME)    SubscribableChannel i">
+<meta name="twitter:description" content="问题重现构建消息消费端 创建绑定接口，绑定example-topic输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。">
 
 
 
@@ -444,6 +444,7 @@
         <h1 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h1><h2 id="构建消息消费端"><a href="#构建消息消费端" class="headerlink" title="构建消息消费端"></a>构建消息消费端</h2><ul>
 <li>创建绑定接口，绑定<code>example-topic</code>输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。</li>
 </ul>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Input</span>(NAME)</span><br><span class="line">    <span class="function">SubscribableChannel <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>对上述输入通道创建监听与处理逻辑。</li>
