@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="程序设计竞赛,算法,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Leegive 个人博客，重新定义自己的边界。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="三角形 有n根棍子，棍子$i$长度为$a_i$。想要从中徐阿初3根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。  限制条件 $ 3 \leq n \leq 100 $ $ 1 \leq a_i \leq 10^6 $  样例1输入$ n = 5 $$ a = {2, 3, 4, 5, 10} $ 输出12(选择3、4、5时)样例2输入$ n = 4 $$ a = {4">
+<meta name="keywords" content="程序设计竞赛,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序设计竞赛-轻松热身">
+<meta property="og:url" content="http://yoursite.com/2018/11/18/程序设计竞赛-轻松热身/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Leegive 个人博客，重新定义自己的边界。">
+<meta property="og:description" content="三角形 有n根棍子，棍子$i$长度为$a_i$。想要从中徐阿初3根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。  限制条件 $ 3 \leq n \leq 100 $ $ 1 \leq a_i \leq 10^6 $  样例1输入$ n = 5 $$ a = {2, 3, 4, 5, 10} $ 输出12(选择3、4、5时)样例2输入$ n = 4 $$ a = {4">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-18T05:34:34.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Leegive 个人博客，重新定义自己的边界。">
+<meta name="twitter:title" content="程序设计竞赛-轻松热身">
+<meta name="twitter:description" content="三角形 有n根棍子，棍子$i$长度为$a_i$。想要从中徐阿初3根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。  限制条件 $ 3 \leq n \leq 100 $ $ 1 \leq a_i \leq 10^6 $  样例1输入$ n = 5 $$ a = {2, 3, 4, 5, 10} $ 输出12(选择3、4、5时)样例2输入$ n = 4 $$ a = {4">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/18/程序设计竞赛-轻松热身/">
 
 
 
 
 
-  <title>Hexo</title>
+  <title>程序设计竞赛-轻松热身 | Hexo</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -217,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -249,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/18/程序设计竞赛-轻松热身/" itemprop="url">程序设计竞赛-轻松热身</a></h1>
+          <h1 class="post-title" itemprop="name headline">程序设计竞赛-轻松热身</h1>
         
 
         <div class="post-meta">
@@ -301,9 +300,7 @@
       
 
       
-        
-          
-            <h1 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h1><blockquote>
+        <h1 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h1><blockquote>
 <p>有n根棍子，棍子$i$长度为$a_i$。想要从中徐阿初3根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。</p>
 </blockquote>
 <h1 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h1><ul>
@@ -319,8 +316,6 @@
 <p>这里用了三重循环，所有复杂度是$O(n^3)$。将$n=100$代入$n^3$得到$10^6$，可知这个复杂度是足够低的。</p>
 <h1 id="答题"><a href="#答题" class="headerlink" title="答题"></a>答题</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span>[] a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 备选答案</span></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 让 i &lt; j &lt; k, 这样棍子就不会被重复选中了</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -335,156 +330,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leegive">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/" itemprop="url">Spring Cloud Stream 如何处理消息重复消费</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T13:23:26+08:00">
-                2018-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/程序设计竞赛/" rel="tag"># 程序设计竞赛</a>
           
-            
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h1><h2 id="构建消息消费端"><a href="#构建消息消费端" class="headerlink" title="构建消息消费端"></a>构建消息消费端</h2><ul>
-<li>创建绑定接口，绑定<code>example-topic</code>输入通道（默认情况下，会绑定到RabbitMQ的同名Exchange或Kafaka的同名Topic）。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Input</span>(NAME)</span><br><span class="line">    <span class="function">SubscribableChannel <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>对上述输入通道创建监听与处理逻辑。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableBinding</span>(ExampleBinder.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(ExampleReceiver.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@StreamListener</span>(ExampleBinder.NAME)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receive</span><span class="params">(String payload)</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"Received: "</span> + payload);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>创建应用主类和配置文件</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ExampleApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=stream-consumer-group</span><br><span class="line">server.port=0</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里设置server.port=0，以方便在本地启动多实例来重现问题。</p>
-</blockquote>
-<h2 id="构建消息生产端"><a href="#构建消息生产端" class="headerlink" title="构建消息生产端"></a>构建消息生产端</h2><p>比较简单，需要注意的是，使用@Output创建一个同名的输出绑定，这样发出的消息才能被上述启动的实例接收到。具体实现如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@EnableBinding</span>(value = &#123;ExampleApplicationTests.ExampleBinder.class&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> ExampleBinder exampleBinder;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exampleBinderTester</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        exampleBinder.output().send(MessageBuilder.withPayload(<span class="string">"Produce a message from : http://blog.didispace.com"</span>).build());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ExampleBinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		String NAME = <span class="string">"example-topic"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Output</span>(NAME)</span><br><span class="line">		<span class="function">MessageChannel <span class="title">output</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>启动上述测试用例之后，可以发现之前启动的两个实例都收到的消息，并在日志中打印了：Received: Produce a message from : <a href="http://blog.didispace.com。消息重复消费的问题成功重现！" target="_blank" rel="noopener">http://blog.didispace.com。消息重复消费的问题成功重现！</a></p>
-<h1 id="使用消费组解决问题"><a href="#使用消费组解决问题" class="headerlink" title="使用消费组解决问题"></a>使用消费组解决问题</h1><p>如何解决上述消息重复消费的问题呢？我们只需要在配置文件中增加如下配置即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.cloud.stream.bindings.example-topic.group=aaa</span><br></pre></td></tr></table></figure>
-<p>当我们指定了某个绑定所指向的消费组之后，往当前主题发送的消息在每个订阅消费组中，只会有一个订阅者接收和消费，从而实现了对消息的负载均衡。只所以之前会出现重复消费的问题，是由于默认情况下，任何订阅都会产生一个匿名消费组，所以每个订阅实例都会有自己的消费组，从而当有消息发送的时候，就形成了广播的模式。</p>
-<p>另外，需要注意上述配置中<code>example-topic</code>是在代码中<code>@Output</code>和<code>@Input</code>中传入的名字。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/15/Spring-Cloud-Stream-如何处理消息重复消费/" rel="next" title="Spring Cloud Stream 如何处理消息重复消费">
+                <i class="fa fa-chevron-left"></i> Spring Cloud Stream 如何处理消息重复消费
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -494,10 +371,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -505,6 +383,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -525,8 +407,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -577,6 +468,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#三角形"><span class="nav-number">1.</span> <span class="nav-text">三角形</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#限制条件"><span class="nav-number">2.</span> <span class="nav-text">限制条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例1"><span class="nav-number">3.</span> <span class="nav-text">样例1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">3.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">3.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-选择3、4、5时"><span class="nav-number">4.</span> <span class="nav-text">12(选择3、4、5时)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例2"><span class="nav-number">5.</span> <span class="nav-text">样例2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入-1"><span class="nav-number">5.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出-1"><span class="nav-number">5.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">6.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#答题"><span class="nav-number">7.</span> <span class="nav-text">答题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -710,6 +617,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
